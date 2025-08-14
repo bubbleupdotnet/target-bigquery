@@ -1,5 +1,5 @@
 {
     "build": {
-        "dockerfile": "tap-bigquery-env"
+        "dockerfile": "target-bigquery-env"
     }
 }
