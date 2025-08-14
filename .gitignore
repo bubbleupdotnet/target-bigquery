@@ -6,3 +6,6 @@ __pycache__
 target_bigquery.egg-info
 service_account/*
 target-config.json
+target-tables-config.json
+state.json
+data.py
