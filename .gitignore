@@ -9,3 +9,4 @@ target-config.json
 target-tables-config.json
 state.json
 data/*
+target-tables-config-bk.json
