@@ -115,6 +115,7 @@ class BaseProcessHandler(object):
         schema_dict = {}
         for field in schema:
             f = field if isinstance(field, dict) else field.to_api_repr()
+            f = f.copy()
             schema_dict[f["name"]] = f
             if f.get("fields"):
                 schema_dict[f["name"]]["fields"] = self._build_bq_schema_dict(f["fields"])
