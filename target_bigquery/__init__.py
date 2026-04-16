@@ -15,7 +15,6 @@ from target_bigquery.state import State, LiteralState
 
 logger = singer.get_logger()
 
-
 def main():
     # parse command line arguments (e.g., target config file path, state, table config file path, process handler type)
     parser = argparse.ArgumentParser()  # argparse.ArgumentParser(parents=[tools.argparser])
@@ -131,7 +130,7 @@ def main():
 
         # write a state file
         for state in state_iterator:
-            emit_state(state)
+            emit_state(state,merge_state_messages)
 
     except Exception as e:
         # load errors surface here

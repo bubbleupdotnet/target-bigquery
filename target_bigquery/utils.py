@@ -12,7 +12,7 @@ from google.cloud.bigquery import DatasetReference
 logger = singer.get_logger()
 
 
-def emit_state(state):
+def emit_state(state,merge_state_messages=True):
     """
     Given a state, writes the state to a state file (e.g., state.json.tmp)
 
@@ -26,9 +26,12 @@ def emit_state(state):
 
         if os.environ.get("TARGET_BIGQUERY_STATE_FILE", None):
             fn = os.environ.get("TARGET_BIGQUERY_STATE_FILE", None)
-            with open(fn, "a") as f:
-                f.write("{}\n".format(line))
-
+            if merge_state_messages:
+                with open(fn, "a") as f:
+                    f.write("{}\n".format(line))
+            else:
+                with open(fn, "w") as f:
+                    f.write("{}\n".format(line))
 
 def ensure_dataset(project_id, dataset_id, location):
     """
