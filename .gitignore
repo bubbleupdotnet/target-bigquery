@@ -1,6 +1,14 @@
 .idea/*
+.DS_Store
 .pytest_cache/*
 .spyproject/*
 venv/*
 __pycache__
 target_bigquery.egg-info
+service_account/*
+target-config.json
+target-tables-config.json
+state.json
+data/*
+target-tables-config-bk.json
+tap-config.json

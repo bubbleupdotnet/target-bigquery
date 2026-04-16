@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug target-bigquery",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/target_bigquery/__init__.py",
+      "cwd": "${workspaceFolder}",
+      "args": [
+        "-s",
+        "${workspaceFolder}/state.json",
+        "--config",
+        "${workspaceFolder}/target-config.json",
+        "-ph",
+        "bookmarks-partial-load-job",
+        "<",
+        "data/data.json"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "python": "${workspaceFolder}/venv/bin/python"  // adjust path,
+    }
+  ]
+}
